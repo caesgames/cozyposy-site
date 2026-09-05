@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cozy Posy - Support / Destek</title>
+<title>Cozy Posy - Support</title>
 <meta name="description" content="Support and contact for the mobile game Cozy Posy.">
 <style>
 :root { --ink:#2f2a24; --muted:#6b6259; --rule:#e6ded2; --bg:#fdfbf7; --accent:#7c8f5f; }
@@ -23,11 +23,7 @@ code { background:#f1ece2; padding:.1em .35em; border-radius:3px; font-size:.9em
 nav { position:sticky; top:0; background:var(--bg); border-bottom:1px solid var(--rule);
       padding:.75rem 1.25rem; display:flex; gap:.5rem; align-items:center; }
 nav strong { margin-right:auto; font-size:.95rem; }
-nav button { font:inherit; font-size:.9rem; padding:.3rem .8rem; cursor:pointer;
-             border:1px solid var(--rule); border-radius:999px; background:#fff; color:var(--muted); }
-nav button[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#fff; }
 nav a { font-size:.9rem; text-decoration:none; padding:.3rem .5rem; }
-section[hidden] { display:none; }
 footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule);
          color:var(--muted); font-size:.85rem; }
 </style>
@@ -35,12 +31,9 @@ footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule);
 <body>
 <nav>
   <strong>Cozy Posy</strong>
-  <button id="btn-en" aria-pressed="true">English</button>
-  <button id="btn-tr" aria-pressed="false">Turkce</button>
   <a href="index.html">Privacy</a>
 </nav>
 <main>
-<section id="en">
 <h1>Cozy Posy - Support</h1>
 <p>Cozy Posy is a flower-sorting puzzle game. If something is wrong, or you just want to say
 something about it, write to the address below. It is read by the developer, not by a support desk,
@@ -79,68 +72,9 @@ your device settings - on iPhone and iPad under Settings &gt; Privacy &amp; Secu
 <p>Deleting the app removes everything the game has written to your phone. Inside the game,
 Settings &gt; Delete save clears your progress. Nothing is held anywhere else - see the
 <a href="index.html">privacy policy</a>.</p>
-</section>
-
-<section id="tr" hidden lang="tr">
-<h1>Cozy Posy - Destek</h1>
-<p>Cozy Posy bir cicek ayirma bulmaca oyunudur. Bir sorun yasarsaniz ya da oyun hakkinda bir sey
-soylemek isterseniz asagidaki adrese yazin. Adresi bir destek ekibi degil, gelistiricinin kendisi
-okuyor; bir iki gun sure taniyin.</p>
-<p><strong>Iletisim:</strong> <a href="mailto:caesgames.dev@gmail.com">caesgames.dev@gmail.com</a></p>
-<p>Cihaz modelinizi, iOS veya Android surumunuzu ve o sirada oynadiginiz bolum numarasini yazarsaniz
-cok yardimci olur. Oyun kendiliginden kapandiysa, hemen oncesinde ne yaptiginizi da ekleyin.</p>
-
-<h2>Sik sorulanlar</h2>
-
-<h3>Altin paketi satin aldim ama altinlar gelmedi</h3>
-<p>Baglantiniz varken oyunu yeniden acin. Magaza, teslim edemedigi bir satin almayi tekrar bildirir ve
-altinlar o acilista hesabiniza eklenir. Buna ragmen gelmediyse yukaridaki adrese yazin ve App Store
-ya da Google Play'in gonderdigi makbuz e-postasini ekleyin: gelistiricinin satin almaniza dair hicbir
-kaydi yoktur ve makbuz olmadan bakamaz.</p>
-
-<h3>Ilerlememi kaybettim</h3>
-<p>Kayit dosyaniz yalnizca telefonunuzda durur. Hesap da bulut yedegi de yoktur; bu yuzden uygulama
-silindikten sonra ilerleme geri getirilemez ve yeni bir telefona tasinmaz. Oyunun sizden hicbir zaman
-giris yapmanizi istememesinin sebebi de budur.</p>
-
-<h3>Canlarim bitti</h3>
-<p>Canlar zamanla kendiliginden dolar. Isterseniz bir can icin istege bagli odullu reklam
-izleyebilirsiniz, isterseniz sadece beklersiniz - oyunda hicbir sey satin almayi zorunlu kilmaz.</p>
-
-<h3>Dukkanda altin paketi gorunmuyor</h3>
-<p>Bu, magazanin cevap vermedigi anlamina gelir. Paketlerin durmasi gereken rafa dokunup tekrar
-sorabilirsiniz; baglantinizi da kontrol edin.</p>
-
-<h3>Reklam iznimi degistirmek istiyorum</h3>
-<p>Oyunu ilk actiginizda size bir riza formu gosterildiyse, uygulamayi silmek verdiginiz cevabi da
-siler ve yeniden kurdugunuzda tekrar sorulur. Ayrica cihaz ayarlarinizdan izlemeyi istediginiz an
-kapatabilirsiniz - iPhone ve iPad'de Ayarlar &gt; Gizlilik ve Guvenlik &gt; Izleme.</p>
-
-<h3>Verilerimi nasil silerim?</h3>
-<p>Uygulamayi silmek, oyunun telefonunuza yazdigi her seyi kaldirir. Oyun icinde Ayarlar &gt; Kaydi sil
-ilerlemenizi temizler. Baska hicbir yerde veri tutulmuyor - <a href="index.html">gizlilik
-politikasina</a> bakabilirsiniz.</p>
-</section>
 <footer>
 Cozy Posy - com.caesgames.cozyposy - Cennet Okur
 </footer>
 </main>
-<script>
-(function () {
-  var en = document.getElementById('en'), tr = document.getElementById('tr');
-  var bEn = document.getElementById('btn-en'), bTr = document.getElementById('btn-tr');
-  function show(lang) {
-    var isTr = lang === 'tr';
-    tr.hidden = !isTr; en.hidden = isTr;
-    bTr.setAttribute('aria-pressed', String(isTr));
-    bEn.setAttribute('aria-pressed', String(!isTr));
-    document.documentElement.lang = isTr ? 'tr' : 'en';
-    window.scrollTo(0, 0);
-  }
-  bEn.onclick = function () { show('en'); };
-  bTr.onclick = function () { show('tr'); };
-  if ((navigator.language || '').toLowerCase().indexOf('tr') === 0) { show('tr'); }
-})();
-</script>
 </body>
 </html>

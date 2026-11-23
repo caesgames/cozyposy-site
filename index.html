@@ -35,12 +35,13 @@ footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule);
 </nav>
 <main>
 <h1>Cozy Posy - Privacy Policy</h1>
-<p><strong>Last updated: 5 September 2026</strong></p>
+<p><strong>Last updated: 23 November 2026</strong></p>
 <p>Cozy Posy is a flower-sorting puzzle game for iPhone, iPad and Android (app id <code>com.caesgames.cozyposy</code>). This page explains in plain language what the game does with data. It is short because the game does very little.</p>
 <p><strong>The short version</strong></p>
 <ul>
-<li>Cozy Posy has no accounts, no login, and no server of its own. The developer receives no data about you at all: not your progress, not your score, not an email address, nothing.</li>
+<li>Cozy Posy has no accounts, no login, and no server of its own. It never asks who you are, and the developer has no way to find out.</li>
 <li>Your saved game stays on your phone.</li>
+<li><strong>Since version 1.0.4 the game does count how it is played.</strong> Which level you started, whether you won it, and whether you watched an ad for a reward are sent to Google Analytics for Firebase, under a random number that belongs to your installation rather than to you. The developer reads the totals - "players usually stop at level 12" - and cannot pick a person out of them. The section "What leaves your device: play statistics" says exactly what is sent. Earlier versions of this game sent none of it, and this page said so.</li>
 <li>The only data that leaves your device for advertising goes to Google. The section below says exactly when that happens - and it can happen in a session where you never watch an ad, because one ad is fetched in the background when the game starts.</li>
 <li>The game also asks the app store you installed from - Apple or Google - what its three coin packs cost where you are, and whether you have a purchase it has not finished delivering. Those requests carry nothing the game knows about you, and they happen every time the game starts, whether or not you ever buy anything. See "Purchases".</li>
 <li><em>Watching</em> an ad is opt-in. Ads play when you choose to watch one for a reward. There are no banners, no pop-ups, and no ads forced between levels.</li>
@@ -60,7 +61,7 @@ footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule);
 <p>This file also never leaves your device. Nobody can read it remotely; it can only be read from the phone itself. It is capped at about 512KB: at that point it is copied to a single older file beside it (<code>funnel.log.1</code>) and starts again, so at most two of these logs exist and the older one is overwritten at the next changeover.</p>
 <p>None of these files is sent anywhere. The game has no server, no cloud save, and no upload of any kind.</p>
 <h2>What leaves your device: ads from Google</h2>
-<p>This section describes the only way any data leaves Cozy Posy for advertising. The game's other contact with the outside world is with the app store you installed from - about the price of the coin packs, and about a purchase of yours the game has not finished delivering - and that is described under "Purchases" below.</p>
+<p>This section describes the only way any data leaves Cozy Posy for advertising. The game's remaining contact with the outside world is of two kinds, each with its own section: the play statistics described in the next section, and the app store you installed from - about the price of the coin packs, and about a purchase of yours the game has not finished delivering - which is described under "Purchases" below.</p>
 <p>Cozy Posy shows <strong>rewarded video ads</strong>: short videos you choose to watch in exchange for something in the game. Ads are supplied by <strong>Google</strong> (Google AdMob), through Google's Mobile Ads software that is built into the game.</p>
 <p>When an ad is requested, Cozy Posy's own code sends nothing about you. It asks Google for an ad and nothing else - no identifier, no profile, no gameplay information. Google's software, running inside the app, then collects and sends its own data directly to Google. According to Google's own documentation, that can include:</p>
 <ul>
@@ -78,9 +79,34 @@ footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule);
 <p>Watching an ad is your choice. But a rewarded ad is fetched <strong>in the background when the game starts</strong>, so that the "watch an ad" button is ready if you ever want it. That fetch is a real ad request. It means the data listed above can reach Google on first launch, before you have touched anything, and in a session where you never watch a single ad.</p>
 <p>There is one exception. If you are somewhere a consent form is required and you refuse it, Google's advertising software is never started at all: no ad is requested, no ad is loaded, and nothing goes to Google's advertising servers.</p>
 <p>One further transmission, for completeness: when the game starts, it asks Google once whether a consent form is required where you are. That check happens before you answer anything and before any ad request. Apart from ad requests themselves, it is the only contact the game makes with Google's advertising side. (On an Android phone the store requests described under "Purchases" reach Google as well, but as the operator of Google Play rather than as an advertising company.)</p>
+<h2>What leaves your device: play statistics</h2>
+<p><strong>New in version 1.0.4.</strong> Earlier versions of Cozy Posy sent no statistics of any kind, and earlier versions of this page said so. The game now counts how it is played, using <strong>Google Analytics for Firebase</strong> - analytics software made by Google and built into the game. This section is the whole of it.</p>
+<p><strong>What the game's own code sends.</strong> Five kinds of event and nothing else:</p>
+<ul>
+<li>a level was started, and which number it was;</li>
+<li>a level ended, which number, and whether it was won or lost;</li>
+<li>the how-to-play screen was finished;</li>
+<li>level 5, level 10 and level 20 were reached;</li>
+<li>a rewarded ad was watched to the end, and which button it was started from.</li>
+</ul>
+<p>Not one of them carries a name, an email address, an age, a location, your save file, your coin balance, or anything you typed - because the game never asks you for any of that in the first place.</p>
+<p><strong>What Google's software adds by itself</strong>, without the game asking it to. According to Google's own published list, this is: a random identifier for your installation (see below); that the app was opened for the first time; that a session started, and how long you were engaged; that the app or the operating system was updated; the app's version; the kind of device and the version of its operating system; the language and country your device is set to; an approximate location - country or region - worked out from your IP address, which Google masks; and, on Android, your device's <strong>Advertising ID</strong>. On iPhone and iPad the advertising identifier (IDFA) is included only if you allowed tracking when Apple's prompt asked.</p>
+<p>Because the ad software and the statistics software are both Google's and both in the game, Google's statistics also record that an ad was shown, clicked or rewarded.</p>
+<p><strong>Buying a coin pack is counted too.</strong> Google's software notices purchases that Apple's or Google's store completes, and records that one happened together with the pack's product identifier, its price, the currency and the quantity. The payment itself is still handled entirely by the store, exactly as described under "Purchases" below: no card number, no billing address and no store account ever reaches this game or its developer.</p>
+<p><strong>The number that stands in for you.</strong> Google's software creates a random identifier for your <em>installation</em> of the game - Google calls it an app instance id - and attaches it to the events above so that "one person played three levels" can be told apart from "three people played one level each". It is not your name, not an account, not your advertising identifier, and it is created on your device rather than looked up anywhere. It is not linked to any identifier of yours, because the game never sets one: there is no code in Cozy Posy that tells Google who you are. Deleting the app ends it, and installing the game again produces a new one with no connection to the old.</p>
+<p><strong>What the developer actually sees.</strong> Charts and totals in a Google console: how many people opened the game, how far they got, which level they stop at, how many ads were watched. No individual player appears in it, and there is no screen anywhere in it that would let the developer look you up.</p>
+<p><strong>Why this was added, honestly.</strong> To buy advertising for the game. The developer intends to connect these statistics to a Google Ads account, so that "this install came from an advert we paid for" can be counted. What that connection shares with Google's advertising side is the fact of a first launch, under the random installation number - not your events one by one, and nothing that names you. If you refuse consent where you are asked for it, none of it happens at all.</p>
+<p><strong>When this starts, which is the part worth reading twice.</strong> Google's software starts when the game starts, so where no consent form is required the counting begins on your first launch, before you have touched anything. Where a consent form <em>is</em> required - the European Economic Area, the UK and Switzerland - the game holds its own events on the device and sends nothing until you answer:</p>
+<ul>
+<li><strong>If you agree</strong>, the held events are sent and counting continues normally.</li>
+<li><strong>If you refuse</strong>, the game switches Google's statistics off, the held events are thrown away, and it tells Google's software to delete the data it has gathered and to forget the random installation number. Nothing further is sent for as long as the refusal stands.</li>
+<li><strong>Until you answer</strong>, nothing of the game's own goes out. Google's software may record the very first launch itself in that window; if you then refuse, that record goes with the deletion described above.</li>
+</ul>
+<p><strong>Turning it off afterwards.</strong> Refusing the consent form, where you are shown one, switches it off. Everywhere else, deleting the app stops all of it - the game writes nothing to any server once it is gone. On Android you can also reset or delete your Advertising ID in your device settings, which breaks the link to your device in every app. And you can write to the address in "Contact" and ask: see "Your rights".</p>
+<p><strong>What Google does with it.</strong> Google processes these statistics for the developer, and its own explanation of how it handles data from apps that use its services is the same page linked in the section above: <strong><a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></strong></p>
 <h2>Your choices about ads</h2>
 <h3>In the European Economic Area, the UK and Switzerland</h3>
-<p>The first time you open Cozy Posy, Google's consent form appears. Nothing to do with advertising happens until you answer it.</p>
+<p>The first time you open Cozy Posy, Google's consent form appears. Nothing to do with advertising happens until you answer it, and the play statistics described in the section above are held on your device unanswered rather than sent.</p>
 <p><strong>If you refuse, the game never starts Google's advertising software at all.</strong> No ad is requested, no ad is loaded, and nothing is sent to Google's advertising servers. The "watch an ad" button simply never appears. Everything else works exactly the same: every level, every reward you earn by playing, and all of your progress.</p>
 <p><strong>Changing your mind.</strong> Cozy Posy does not yet have a button in its Settings that reopens the consent form. Until it does, removing the app from your device clears the answer that was stored there, so installing it again asks you again. The device-level controls below also work at any time.</p>
 <h3>On iPhone and iPad</h3>
@@ -99,6 +125,7 @@ footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule);
 <p>If you are in the EEA, the UK or Switzerland, the GDPR and equivalent laws apply.</p>
 <ul>
 <li>For what Google's advertising software collects, the legal basis is <strong>your consent</strong>, which you give or refuse in the form described above. Some of the advertising companies listed in that form rely instead on their own <strong>legitimate interest</strong> for part of what they do, which the form says on its face and which you can object to there, under "Manage options", one company at a time. Refusing consent outright stops the advertising software from starting at all, so it stops both.</li>
+<li>For the play statistics described above, the legal basis is <strong>your consent</strong>, given or refused in the same form. Where the form is required and you have not answered it, nothing of the game's own is sent at all; where you refuse, what was gathered is deleted. The developer is the controller for these statistics and Google processes them on the developer's instructions.</li>
 <li>For the single start-up check that decides whether a form is needed, the basis is the <strong>legitimate interest</strong> in complying with the law that requires the form in the first place.</li>
 <li>For the start-up request that asks the app store what the coin packs cost, the basis is the <strong>legitimate interest</strong> in showing you a price that is correct in your own currency. That request tells the store which three products this game sells, and nothing about you. Where the same connection asks whether a pack you paid for is still undelivered, or confirms one that has been delivered, the basis is <strong>performance of the purchase</strong> you made.</li>
 <li>That data is transferred outside the EEA, the UK and Switzerland, as described above. Google is the controller for it there and is responsible for the safeguards that cover the transfer.</li>
@@ -109,11 +136,13 @@ footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule);
 <ul>
 <li>No account, login, username, email address, password or profile.</li>
 <li>No cloud save, leaderboard, friends list, chat or sharing.</li>
-<li>No analytics service and no crash-reporting service. There is no Firebase, no Unity Analytics, and no tracking or attribution software of any kind. Two pieces of third-party code in the game use the internet and no others: Google's advertising software, and the in-app purchase code that talks to Apple's or Google's store.</li>
+<li><strong>No crash-reporting service.</strong> When the game hits an error it writes the text to the local file described above and nothing else; there is no Crashlytics, no Sentry, and no Unity Cloud Diagnostics. (Until version 1.0.4 this line also said there was no analytics service of any kind, which was true then and is not true now: see "What leaves your device: play statistics".)</li>
+<li>No attribution or ad-measurement software beyond what is described on this page: no Adjust, no AppsFlyer, no Facebook or TikTok SDK, and no advertising network other than Google's. Three pieces of third-party code in the game use the internet and no others: Google's advertising software, Google's statistics software, and the in-app purchase code that talks to Apple's or Google's store.</li>
 <li>No location access. The game never asks for and never uses your device's location. (Google can infer an approximate area from your IP address, as described above.)</li>
 <li>No camera, microphone, photos, contacts, health or fitness data.</li>
 <li>No push notifications, and no push token or notification address for you (see below).</li>
-<li>No data sold by the developer, and none shared with data brokers, because the developer receives none. Note that personalised advertising can itself count as "sharing" or "selling" under some US state privacy laws. Refusing ad consent, or turning tracking off as described above, stops it.</li>
+<li>No data sold, ever, and none shared with data brokers. The statistics the developer does now receive are not sold, not traded, and not handed to anyone but Google, which processes them for the developer. Note that personalised advertising can itself count as "sharing" or "selling" under some US state privacy laws. Refusing ad consent, or turning tracking off as described above, stops it.</li>
+<li><strong>No profile of you.</strong> Nothing in the game sets an identifier for a person: no user id is ever sent to Google, no signed-in account is read, and the statistics are tied to a random number for the installation and nothing else. Nobody - the developer included - can go from that number to a person.</li>
 </ul>
 <h2>Reminders on your device</h2>
 <p>Cozy Posy can remind you when your lives are full or your daily gift is ready. These are <strong>local notifications</strong>: your phone schedules them itself, from timers inside the game. Nothing is sent over the internet, no message comes from a server, and the game holds no address or token for you. You can turn them off in your device's notification settings.</p>
@@ -127,22 +156,26 @@ footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule);
 <h2>How long data is kept</h2>
 <ul>
 <li><strong>On your device:</strong> your save file and the local logs stay until you remove them. Deleting the app removes everything the game has written. Inside the game, <strong>Settings &gt; Delete save</strong> erases your progress and its backups; it does not erase the two log files described above, which go when you delete the app.</li>
-<li><strong>By Google:</strong> how long Google keeps advertising data is set out in Google's policy, linked above.</li>
-<li><strong>By the developer:</strong> nothing is kept, because nothing is received.</li>
+<li><strong>By Google, for advertising:</strong> how long Google keeps advertising data is set out in Google's policy, linked above.</li>
+<li><strong>By the developer, for the play statistics:</strong> Google holds them for the retention period set in the developer's Google Analytics settings. That period is <strong>at most 14 months</strong> for the event records, and shorter for anything tied to the random installation number. The totals the developer reads - how many players reached level 12 this month - are not tied to an installation at all and are kept for as long as the game is published, because no one appears in them.</li>
+<li><strong>If you refuse consent</strong>, the records gathered under your installation number are deleted and the number is reset, as described under "What leaves your device: play statistics".</li>
 </ul>
 <h2>Your rights</h2>
-<p>Because the developer holds no data about you, there is nothing to look up, correct, export or delete on request, and no way to identify you even if we tried. That is not a dodge; it is how the game is built.</p>
+<p>The developer holds no name, no email address, no account and no contact detail for you, and there is nothing in the game that would let anyone identify you. What the developer does hold, since version 1.0.4, is the play statistics described above, under a random number belonging to your installation.</p>
+<p>That matters for one honest reason: a request like "show me my data" or "delete my data" can only be answered for an installation that can be pointed at, and the only thing that points at yours is that random number - which the game never shows you and the developer cannot look up from a message. So the practical routes are the ones below, and they work without anyone having to identify you.</p>
 <p>What you can actually do:</p>
 <ul>
-<li><strong>Delete everything the game holds:</strong> delete the app. Settings &gt; Delete save inside the game clears your progress and its backups, but not the two log files.</li>
-<li><strong>Reach Google's side of it:</strong> rights over the data Google collected go to Google, through the policy linked above. Resetting or deleting your advertising ID, as described above, breaks the link to your device.</li>
-<li><strong>Ask anyway:</strong> if you are in the EEA, the UK, or a US state with a privacy law, and you want to make a request, write to caesgames.dev@gmail.com. You will get an answer, even when the answer is that there is nothing to hand over. You also have the right to complain to your local data protection authority.</li>
+<li><strong>Switch the statistics off and have them deleted:</strong> where you were shown a consent form, refuse it. The game then stops collecting, throws away what it was holding, and tells Google to delete what was gathered under your installation number and to forget the number itself. This is the only route that reaches the already-collected data directly, and it needs no message to anyone.</li>
+<li><strong>Delete everything the game holds on your device:</strong> delete the app. Settings &gt; Delete save inside the game clears your progress and its backups, but not the two log files. Deleting the app ends the installation number as well, so nothing further is ever added under it.</li>
+<li><strong>Reach Google's side of it:</strong> rights over the data Google collected for advertising go to Google, through the policy linked above. Resetting or deleting your advertising ID, as described above, breaks the link to your device.</li>
+<li><strong>Ask:</strong> if you are in the EEA, the UK, Türkiye, or a US state with a privacy law, write to caesgames.dev@gmail.com. Say which platform and roughly when you played, and the developer will do what can be done - which, for statistics that carry no identifier of yours, is normally to confirm what is held and to delete the matching records where they can be found. You will get an answer, including when the honest answer is that there is nothing that can be tied to you. You also have the right to complain to your local data protection authority.</li>
 </ul>
 <h2>Children</h2>
 <p>Cozy Posy is made for a general audience. It is not directed at children under 13, and the developer does not knowingly collect personal data from children. If you believe a child has provided personal data through this game, write to caesgames.dev@gmail.com.</p>
 <p>The game does tell Google to serve only ads rated <strong>G</strong> - its strictest content rating - so the ads shown inside Cozy Posy are limited to general-audience material.</p>
 <h2>Changes to this policy</h2>
 <p>If the game starts doing something this page does not describe - a cloud save, an analytics tool, a server of its own - this page is updated before that version is released, and the date at the top changes.</p>
+<p>That has happened once. Version 1.0.4 added the analytics tool described under "What leaves your device: play statistics", and this page was rewritten for it before that version was submitted. The previous version of this page, which said the game contained no analytics software of any kind, was accurate for versions up to and including 1.0.3.</p>
 <h2>Contact</h2>
 <p>caesgames.dev@gmail.com</p>
 <footer>
